@@ -1,0 +1,11 @@
+- Create a dist directory
+- Create a src directory
+- Init a npm project `npm init -y`
+- Add an index.html in dist directory, with basic html template and a script tag which has src as `./main.js`
+- Install required webpack dev dependencies: `npm i webpack webpack-cli --save-dev`
+- Create an `index.js` file inside src directory and add some code to execute, 
+ - If you've defined a method, make sure it's getting called, otherwise webpack would create an empty package, as nothing is being done by the scrept.
+
+- Run webpack command to generate a package:
+    - `npx webpack --mode production`
+    - A new `main.js` package/file is created inside `dist` directory, which should already be included in `index.html` in 3rd step.

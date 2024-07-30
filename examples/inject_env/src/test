@@ -1,0 +1,41 @@
+OK, so have fun! :D
+-------------------
+<%
+    var fruits = ["Apple", "Pear", "Orange", "Lemon"]
+      , random = " ".repeat(198).split("").map(x => Math.random())
+      ;
+%>
+
+These fruits are amazing:
+<% 
+for(var i = 0; i < fruits.length; ++i) {%>
+  - <%=fruits[i]%>s<% } %>
+
+Let's see some random numbers:
+
+<% random.forEach((c, i) => {
+%> <%=c.toFixed(2) + ((i + 1) % 10 === 0 ? "\n": "  ") %><%});%>
+
+
+
+<%
+  let people = ['geddy', 'neil', 'alex'];
+  const process = {
+    APP_NAME: 'Mock EJS Environment Example',
+    APP_VERSION: '1.0.0',
+    PORT: '3000',
+  };
+%>
+
+<title>
+<% Object.keys(process).forEach(function(key) { %>
+<li><strong><%= key %></strong>:<%= process[key] %><% }) %>
+</title>
+
+
+
+    // <% Object.keys(process.env).filter(key => key.startsWith('ABC')).forEach(function (key) { %>
+    //     window.<%= key %> = '<%= process.env[key] %>';
+    // <% }) %>
+<% Object.keys(process.env).forEach(function (key) { %>
+    <%= key %>=<%= process.env[key] %><% }) %>
